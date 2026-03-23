@@ -1,43 +1,65 @@
-/* Estilização Geral do Corpo */
+/* Estilizando o corpo para um fundo moderno (opcional) */
 body {
-  background-color: #fcfaf2; /* Um off-white para não cansar a vista */
+  background-color: #f8fafc;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 20px;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Estilização dos Links (Menu) */
-a {
+/* 1. Transformando os links em botões de navegação */
+a[routerLink] {
   display: inline-block;
   text-decoration: none;
-  color: #86608E; /* Roxo como cor principal */
-  background-color: #FFFFCC; /* Creme como fundo */
-  padding: 10px 25px;
+  color: #475569;
+  font-weight: 600;
+  padding: 12px 24px;
   margin: 5px;
-  border-radius: 8px;
-  font-weight: bold;
-  border: 2px solid #86608E;
-  transition: all 0.3s ease;
-  box-shadow: 3px 3px 0px #86608E;
+  background: white;
+  border-radius: 50px; /* Estilo pílula */
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Efeito Hover (Ao passar o mouse) */
-a:hover {
-  background-color: #86608E;
-  color: #FFFFCC;
-  transform: translate(-2px, -2px);
-  box-shadow: 5px 5px 0px #5a3d61;
-}
-
-/* Removendo o <br> visualmente para criar um menu horizontal */
+/* 2. Removendo o efeito visual do <br> para alinhar os itens lado a lado */
 br {
   display: none;
 }
 
-/* Espaçamento para o conteúdo que será carregado no router-outlet */
+/* 3. Efeito de Hover (Interatividade) */
+a[routerLink]:hover {
+  background-color: #6366f1;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+  border-color: #6366f1;
+}
+
+/* 4. Estilo para quando o link está ativo (Angular usa essa classe por padrão) */
+.active {
+  background-color: #6366f1 !important;
+  color: white !important;
+  border-color: #4f46e5 !important;
+}
+
+/* 5. Estilizando o Router-Outlet (O conteúdo que vem depois) */
 router-outlet + * {
   display: block;
   margin-top: 30px;
-  padding: 20px;
-  border-top: 2px dashed #86608E;
-  color: #4a3a4d;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animação suave para o conteúdo */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
