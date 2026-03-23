@@ -1,0 +1,43 @@
+/* Estilização Geral do Corpo */
+body {
+  background-color: #fcfaf2; /* Um off-white para não cansar a vista */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+}
+
+/* Estilização dos Links (Menu) */
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #86608E; /* Roxo como cor principal */
+  background-color: #FFFFCC; /* Creme como fundo */
+  padding: 10px 25px;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 2px solid #86608E;
+  transition: all 0.3s ease;
+  box-shadow: 3px 3px 0px #86608E;
+}
+
+/* Efeito Hover (Ao passar o mouse) */
+a:hover {
+  background-color: #86608E;
+  color: #FFFFCC;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #5a3d61;
+}
+
+/* Removendo o <br> visualmente para criar um menu horizontal */
+br {
+  display: none;
+}
+
+/* Espaçamento para o conteúdo que será carregado no router-outlet */
+router-outlet + * {
+  display: block;
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 2px dashed #86608E;
+  color: #4a3a4d;
+}

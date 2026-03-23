@@ -1,0 +1,90 @@
+/* --- Estilização Global --- */
+body {
+  background-color: #fdfcf0; /* Creme clarinho para o fundo da página */
+  color: #4a3a4d; /* Roxo escuro para melhor leitura */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 40px;
+}
+
+/* --- Menu de Navegação --- */
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #86608E;
+  background-color: #FFFFCC;
+  padding: 12px 24px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  font-weight: 700;
+  border: 2px solid #86608E;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+a:hover {
+  background-color: #86608E;
+  color: #FFFFCC;
+  box-shadow: 0 4px 15px rgba(134, 96, 142, 0.3);
+}
+
+br { display: none; } /* Mantém o menu horizontal */
+
+/* --- Estilização do Conteúdo das Páginas (Router Outlet) --- */
+
+/* Container que recebe o conteúdo */
+router-outlet + * {
+  display: block;
+  margin-top: 40px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  border-left: 8px solid #86608E; /* Detalhe lateral em roxo */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Títulos dentro das páginas */
+h1, h2, h3 {
+  color: #86608E;
+  margin-top: 0;
+}
+
+/* Parágrafos e textos */
+p {
+  color: #5d4a61;
+  font-size: 1.1rem;
+}
+
+/* Estilo para possíveis listas ou itens dentro das páginas */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #FFFFCC;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 6px;
+  color: #86608E;
+  font-weight: 500;
+  border: 1px solid rgba(134, 96, 142, 0.2);
+}
+
+/* Botões de ação dentro das páginas (se houver) */
+button {
+  background-color: #86608E;
+  color: #FFFFCC;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  filter: brightness(1.2);
+}
