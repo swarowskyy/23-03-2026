@@ -5,7 +5,7 @@ import { Tropa } from './tropa/tropa';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Resenha,Tropa, RouterLink],
+  imports: [RouterOutlet, Resenha,Tropa, RouterLink,],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
