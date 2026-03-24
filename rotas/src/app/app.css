@@ -1,65 +1,61 @@
-/* Estilizando o corpo para um fundo moderno (opcional) */
+/* Reset básico para consistência */
+  *
+{margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
 body {
-  background-color: #f8fafc;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 40px;
+  background-color: #f4f7f6;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 50px;
 }
 
-/* 1. Transformando os links em botões de navegação */
-a[routerLink] {
-  display: inline-block;
+/* Container da Navegação */
+nav {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  gap: 8px;
+}
+
+/* Estilização dos Links */
+a {
   text-decoration: none;
-  color: #475569;
-  font-weight: 600;
+  color: #555;
   padding: 12px 24px;
-  margin: 5px;
-  background: white;
-  border-radius: 50px; /* Estilo pílula */
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease; /* UX: Feedback suave */
+  position: relative;
 }
 
-/* 2. Removendo o efeito visual do <br> para alinhar os itens lado a lado */
-br {
-  display: none;
+/* Efeito de Hover (UX: Indica interatividade) */
+a:hover {
+  background-color: #f0f2f5;
+  color: #86608E;
 }
 
-/* 3. Efeito de Hover (Interatividade) */
-a[routerLink]:hover {
-  background-color: #6366f1;
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
-  border-color: #6366f1;
+/* Classe de Link Ativo (Angular aplica automaticamente) */
+.active-link {
+  background-color: #e7f3ff;
+  color: #86608E;
+  font-weight: 600;
 }
 
-/* 4. Estilo para quando o link está ativo (Angular usa essa classe por padrão) */
-.active {
-  background-color: #6366f1 !important;
-  color: white !important;
-  border-color: #4f46e5 !important;
-}
-
-/* 5. Estilizando o Router-Outlet (O conteúdo que vem depois) */
+/* Estilização do Outlet (Conteúdo) */
 router-outlet + * {
   display: block;
   margin-top: 30px;
-  padding: 25px;
+  padding: 20px;
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  border-radius: 8px;
+  width: 80%;
   max-width: 600px;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Animação suave para o conteúdo */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
